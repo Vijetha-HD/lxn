@@ -1,0 +1,94 @@
+
+/* 
+@tailwind components;
+@tailwind utilities;  */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light ;
+  color: #213547;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --primary-bg: #fff;
+  --primary-text: #213547;
+  --accent: #646cff;
+  --sidebar-bg: #232a3d;
+  --header-bg: #1a2236;
+  --card-bg: #232a3d;
+  --border-radius: 12px;
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+a {
+  font-weight: 500;
+  color:var(--accent);
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: inherit;
+  transition: background var(--transition), color var(--transition);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  margin: 0 0 0.5em 0;
+  font-weight: 700;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  color: #213547;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+  background: var(--accent);
+  color: #fff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+
+/* Non-hover login button background */
+button.login-btn {
+  background-color: #2e90fa; /* Primary blue */
+  color: white;
+}
+
+
+
+
+
+
+
+
+

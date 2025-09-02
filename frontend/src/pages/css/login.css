@@ -1,0 +1,304 @@
+/*login.css
+
+/*Login.css
+
+/* Base Card Styles */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+  backdrop-filter: blur(15px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Smooth card appearance on load */
+.card {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input and Select focus states */
+input:focus, select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Login Button */
+.login-button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.login-button:hover:not(:disabled) {
+  background-color: #4f46e5;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.login-button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Message Animation */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Gradient overlay for background */
+.login-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+  }
+  .login-button {
+    font-size: 0.95rem;
+    padding: 0.75rem 0;
+  }
+}
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+  }
+  input, select {
+    padding: 0.65rem 1rem;
+  }
+}
+
+/* Additional Micro-UX improvements */
+input::placeholder {
+  color: rgba(156,163,175,0.7);
+  transition: color 0.3s ease;
+}
+input:focus::placeholder {
+  color: rgba(156,163,175,0.4);
+}
+
+/* Smooth transition for all interactive elements */
+button, input, select {
+  transition: all 0.25s ease;
+}
+
+.close:hover{
+    background-color:whitesmoke;
+}
+
+
+/* Base Styles */
+.login-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Responsive Background Image */
+.login-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Gradient Overlay */
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0.4) 0%, 
+    rgba(0, 0, 0, 0.3) 50%, 
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+/* Card Styles */
+.card {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(15px);
+  animation: cardFadeIn 0.6s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Elements */
+input, select {
+  transition: all 0.3s ease;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  padding: 0.75rem 1rem;
+  color: #111827;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+input::placeholder {
+  color: rgba(156, 163, 175, 0.7);
+  transition: color 0.3s ease;
+}
+
+input:focus::placeholder {
+  color: rgba(156, 163, 175, 0.4);
+}
+
+/* Button Styles */
+.login-button {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #4f46e5;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Error Message */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+  }
+  
+  input, select {
+    padding: 0.65rem 1rem;
+  }
+  
+  .login-button {
+    padding: 0.65rem;
+  }
+}
+
+/* Accessibility Improvements */
+[role="alert"] {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, select, a {
+  transition: all 0.25s ease;
+}
+
