@@ -43,8 +43,8 @@ jobs:
 
           # Start or restart backend with PM2
           if [ -d backend ]; then
-            cd backend && pm2 start index.js --name lxn-app || pm2 restart lxn-app && cd ..
-          elif [ -f index.js ]; then
-            pm2 start index.js --name lxn-app || pm2 restart lxn-app
+          cd backend && pm2 start server.js --name lxn-app || pm2 restart lxn-app && cd ..
+          elif [ -f server.js ]; then
+          pm2 start server.js --name lxn-app || pm2 restart lxn-app
           fi
-          "
+
